@@ -1,0 +1,103 @@
+.projects-list {
+    display: flex;
+    color: #000;
+}
+
+.projects-list {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .filter-panel {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+  }
+  
+  .project-display {
+    flex: 3;
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+    letter-spacing: 0.01em;
+    line-height: 14px;
+    padding: 0.875rem 1.25rem 0.625rem 1.25rem;
+    box-shadow: 0 3px 24px 0 rgba(0, 0, 0, 0.1);
+    background-color: #C5004B;
+    transition: 0.4s all;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #c5004cd7;
+    cursor: pointer;
+  }
+
+  .select-multiple-employees {
+    height: 300px;
+  }
+  
+  .project-display {
+    width: 500px;
+    height: auto;
+    background-color: #002F53;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .project-card {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 15px;
+    width: 150px;
+    color: #fff;
+    text-align: center;
+    transition: 0.4s all;
+    h3 {
+      /* text-decoration: underline; */
+      color: #C5004B;
+    }
+  }
+
+  .project-card:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .engaged-employees ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .engaged-employees li {
+    margin-bottom: 5px;
+  }
+  

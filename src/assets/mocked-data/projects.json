@@ -1,0 +1,72 @@
+[
+    {
+        "projectId": "72BKLL1W",
+        "projectName": "Project0",
+        "budget": 76037,
+        "startDate": "2022-12-30",
+        "engagedEmployees": []
+    },
+    {
+        "projectId": "6Q73PY9A",
+        "projectName": "Project1",
+        "budget": 11115,
+        "startDate": "2022-02-01",
+        "engagedEmployees": []
+    },
+    {
+        "projectId": "DVOPSGJ3",
+        "projectName": "Project2",
+        "budget": 32605,
+        "startDate": "2023-05-19",
+        "engagedEmployees": []
+    },
+    {
+        "projectId": "VQ44BB1F",
+        "projectName": "Project3",
+        "budget": 47779,
+        "startDate": "2022-01-22",
+        "engagedEmployees": []
+    },
+    {
+        "projectId": "EYSKGSZC",
+        "projectName": "Project4",
+        "budget": 87785,
+        "startDate": "2023-05-25",
+        "engagedEmployees": []
+    },
+    {
+        "projectId": "WI052VR2",
+        "projectName": "Project5",
+        "budget": 84361,
+        "startDate": "2023-10-17",
+        "engagedEmployees": []
+    },
+    {
+        "projectId": "CYWPQU42",
+        "projectName": "Project6",
+        "budget": 87566,
+        "startDate": "2023-09-01",
+        "engagedEmployees": []
+    },
+    {
+        "projectId": "LI6XA9MS",
+        "projectName": "Project7",
+        "budget": 67039,
+        "startDate": "2022-10-31",
+        "engagedEmployees": []
+    },
+    {
+        "projectId": "ME59AXJ3",
+        "projectName": "Project8",
+        "budget": 57883,
+        "startDate": "2022-12-18",
+        "engagedEmployees": []
+    },
+    {
+        "projectId": "Z0V4Q660",
+        "projectName": "Project9",
+        "budget": 37888,
+        "startDate": "2023-07-30",
+        "engagedEmployees": []
+    }
+]
