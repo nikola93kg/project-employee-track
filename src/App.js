@@ -11,10 +11,10 @@ function App() {
     <div className="main">
     <Navbar />
     {/* dodaj conditional rendering za ovaj heading */}
-    <div className="heading"> 
+    {/* <div className="heading"> 
       <h1>Project employees tracker</h1>
       <p>Get the latest information about projects and employees engaged on the project</p>
-    </div>
+    </div> */}
       <Routes>
         <Route path="/" element={<ProjectsList />} />
         <Route path="/project/create" element={<ProjectForm />} />

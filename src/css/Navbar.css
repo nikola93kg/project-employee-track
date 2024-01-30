@@ -8,7 +8,9 @@
 }
 
 .navbar-logo img {
-  height: 50px;
+  max-height: 32px;
+  max-width: 100%;
+  object-fit: scale-down;
 }
 
 .navbar-links {

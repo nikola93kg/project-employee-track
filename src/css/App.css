@@ -1,10 +1,14 @@
 body {
     margin: 0;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    background-image: linear-gradient( 180deg, rgba(248, 246, 246, 0.582), rgba(2, 2, 2, 0.815) ), url(https://www.engserbia.com/resources/Photos/office-1209640_1920.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .main {
     min-height: 100vh;
-    font-family: neue-haas-grotesk-display, sans-serif;
 }
 
 .heading {

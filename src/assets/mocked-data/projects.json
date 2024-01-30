@@ -47,26 +47,5 @@
         "budget": 87566,
         "startDate": "2023-09-01",
         "engagedEmployees": []
-    },
-    {
-        "projectId": "LI6XA9MS",
-        "projectName": "Project7",
-        "budget": 67039,
-        "startDate": "2022-10-31",
-        "engagedEmployees": []
-    },
-    {
-        "projectId": "ME59AXJ3",
-        "projectName": "Project8",
-        "budget": 57883,
-        "startDate": "2022-12-18",
-        "engagedEmployees": []
-    },
-    {
-        "projectId": "Z0V4Q660",
-        "projectName": "Project9",
-        "budget": 37888,
-        "startDate": "2023-07-30",
-        "engagedEmployees": []
     }
 ]
