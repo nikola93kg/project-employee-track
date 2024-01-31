@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, FieldArray, ErrorMessage } from "formik";
 import { useGlobalContext } from "../store/context";
 import { useNavigate } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import * as Yup from "yup";
 import "../css/ProjectForm.css";
 
-function ProjectForm({ projectId = null }) {
+function ProjectForm() {
+
   const navigate = useNavigate();
-  const { projects, saveProject, employees } = useGlobalContext();
+  const { projects, createAndUpdateProject, employees } = useGlobalContext();
+  const { projectId } = useParams();
   const [initialValues, setInitialValues] = useState({
     projectName: "",
     budget: "",
@@ -25,13 +28,12 @@ function ProjectForm({ projectId = null }) {
           projectName: existingProject.projectName,
           budget: existingProject.budget,
           startDate: existingProject.startDate,
-          engagedEmployees: existingProject.engagedEmployees.map(
-            (emp) => emp.employeeId
-          ),
+          engagedEmployees: existingProject.engagedEmployees,
         });
       }
     }
   }, [projectId, projects]);
+  
 
   const projectValidationSchema = Yup.object().shape({
     projectName: Yup.string()
@@ -77,7 +79,7 @@ function ProjectForm({ projectId = null }) {
 
   const handleSubmit = (values, { setSubmitting }) => {
     console.log("Project data:", values);
-    saveProject(values, projectId);
+    createAndUpdateProject(values, projectId);
     setSubmitting(false);
     navigate("/");
   }
@@ -125,20 +127,14 @@ function ProjectForm({ projectId = null }) {
                 <div>
                   {form.values.engagedEmployees.map((employee, index) => (
                     <div key={employee.employeeId}>
-                      <Field
-                        name={`engagedEmployees.${index}.employeeId`}
-                        as="select"
-                      >
+                      <Field name={`engagedEmployees.${index}.employeeId`} as="select">
                         {employees.map((emp) => (
                           <option key={emp.employeeId} value={emp.employeeId}>
                             {emp.FirstName} {emp.LastName}: {emp.Seniority}
                           </option>
                         ))}
                       </Field>
-                      <Field
-                        name={`engagedEmployees.${index}.role`}
-                        as="select"
-                      >
+                      <Field name={`engagedEmployees.${index}.role`} as="select">
                         <option value="">Select Role on the project</option>
                         <option value="Project Manager">Project Manager</option>
                         <option value="Team Lead">Team Lead</option>
@@ -150,10 +146,7 @@ function ProjectForm({ projectId = null }) {
                       <label htmlFor={`engagedEmployees.${index}.startDate`}>
                         Start Date:
                       </label>
-                      <Field
-                        type="date"
-                        name={`engagedEmployees.${index}.startDate`}
-                      />
+                      <Field type="date" name={`engagedEmployees.${index}.startDate`} />
                       <Field
                         type="number"
                         name={`engagedEmployees.${index}.engagementDuration`}

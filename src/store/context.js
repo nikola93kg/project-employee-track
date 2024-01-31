@@ -30,7 +30,7 @@ const AppProvider = ({ children }) => {
   }, []);
 
 
-  const saveProject = (projectData, projectId) => {
+  const createAndUpdateProject = (projectData, projectId) => {
     setProjects((prevProjects) => {
       let updatedProjects = [...prevProjects];
   
@@ -39,8 +39,8 @@ const AppProvider = ({ children }) => {
           if (project.projectId === projectId) {
             return { ...project, ...projectData }
           }
-          return project;
-        });
+          return project
+        })
       } else {
         const newProject = {
           projectId: `P${Math.floor(Math.random() * 10000)}`,
@@ -55,12 +55,40 @@ const AppProvider = ({ children }) => {
       return updatedProjects;
     });
   }
-  
 
+  const formatBudget = (amount) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0,
+    }).format(amount);
+  }
+
+  const formatDate = (dateString) => {
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    const date = new Date(dateString);
+    return `${date.getDate()} ${date.toLocaleString("en-US", {
+      month: "long",
+    })}, ${date.getFullYear()}`
+  }
+
+  const filterProjects = (filterValues) => {
+    return projects.filter((project) => {
+      const matchName = project.projectName.toLowerCase().includes(filterValues.projectName.toLowerCase());
+      const matchBudget = project.budget >= (filterValues.budgetFrom || 0) && project.budget <= (filterValues.budgetTo || 5000000); //ili neki infinity broj
+      const matchEmployees = filterValues.employees.length === 0 || filterValues.employees.some(empId => project.engagedEmployees.some(emp => emp.employeeId === empId));
+  
+      return matchName && matchBudget && matchEmployees;
+    });
+  }
+  
   const context = {
     projects: projects,
     employees: employees,
-    saveProject: saveProject,
+    createAndUpdateProject: createAndUpdateProject,
+    formatBudget: formatBudget,
+    formatDate: formatDate,
+    filterProjects: filterProjects
   }
 
   return <AppContext.Provider value={context}>{children}</AppContext.Provider>

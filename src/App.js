@@ -18,8 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<ProjectsList />} />
         <Route path="/project/create" element={<ProjectForm />} />
-        <Route path="/project/edit/:id" element={<ProjectForm />} />
-        <Route path="/project/:id" element={<ProjectDetails />} />
+        <Route path="/project/edit/:projectId" element={<ProjectForm />} />
+        <Route path="/project/:projectId" element={<ProjectDetails />} />
       </Routes>
     </div>
   );
