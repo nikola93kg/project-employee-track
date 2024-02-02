@@ -85,7 +85,7 @@ function ProjectForm() {
   }
 
   return (
-    <div className="project-container">
+    <div className="project-form-container">
       <div className="image-content"></div>
       <div className="project-form">
         <h2>{projectId ? "Update Project" : "Create Project"}</h2>
@@ -98,32 +98,20 @@ function ProjectForm() {
           <Form>
             <label htmlFor="projectName">Project Name:</label>
             <Field type="text" name="projectName" />
-            <ErrorMessage
-              name="projectName"
-              component="div"
-              className="error-message"
-            />
+            <ErrorMessage name="projectName" component="div" className="error-message"/>
 
             <label htmlFor="budget">Budget:</label>
             <Field type="number" name="budget" />
-            <ErrorMessage
-              name="budget"
-              component="div"
-              className="error-message"
-            />
+            <ErrorMessage name="budget" component="div" className="error-message" />
 
             <label htmlFor="startDate">Start Date:</label>
             <Field type="date" name="startDate" />
-            <ErrorMessage
-              name="startDate"
-              component="div"
-              className="error-message"
-            />
+            <ErrorMessage name="startDate" component="div" className="error-message"/>
 
             <label htmlFor="engagedEmployees">Engaged Employees:</label>
 
             <FieldArray name="engagedEmployees">
-              {({ insert, remove, push, form }) => (
+              {({ remove, push, form }) => (
                 <div>
                   {form.values.engagedEmployees.map((employee, index) => (
                     <div key={employee.employeeId}>
@@ -146,52 +134,24 @@ function ProjectForm() {
                       <label htmlFor={`engagedEmployees.${index}.startDate`}>
                         Start Date:
                       </label>
-                      <Field type="date" name={`engagedEmployees.${index}.startDate`} />
-                      <Field
-                        type="number"
-                        name={`engagedEmployees.${index}.engagementDuration`}
-                        placeholder="set engagement duration in months"
-                      />
-                      <ErrorMessage
-                        name={`engagedEmployees.${index}.employeeId`}
-                        component="div"
-                        className="error-message"
-                      />
-                      <ErrorMessage
-                        name={`engagedEmployees.${index}.role`}
-                        component="div"
-                        className="error-message"
-                      />
-                      <ErrorMessage
-                        name={`engagedEmployees.${index}.startDate`}
-                        component="div"
-                        className="error-message"
-                      />
-                      <ErrorMessage
-                        name={`engagedEmployees.${index}.engagementDuration`}
-                        component="div"
-                        className="error-message"
-                      />
-                      <button
-                        type="button"
-                        className="remove-btn"
-                        onClick={() => remove(index)}
-                      >
+                      <Field type="date" className="start-date" name={`engagedEmployees.${index}.startDate`} />
+                      <Field type="number" name={`engagedEmployees.${index}.engagementDuration`} placeholder="set engagement duration in months" />
+                      <ErrorMessage name={`engagedEmployees.${index}.employeeId`} component="div" className="error-message" />
+                      <ErrorMessage name={`engagedEmployees.${index}.role`} component="div" className="error-message" />
+                      <ErrorMessage name={`engagedEmployees.${index}.startDate`} component="div" className="error-message" />
+                      <ErrorMessage name={`engagedEmployees.${index}.engagementDuration`} component="div" className="error-message" />
+                      <button type="button" className="remove-btn" onClick={() => remove(index)} >
                         Remove
                       </button>
                     </div>
                   ))}
-                  <button
-                    type="button"
-                    onClick={() =>
-                      push({
+                  <button type="button" onClick={() => push({
                         employeeId: "",
                         role: "",
                         startDate: "",
                         engagementDuration: "",
                       })
-                    }
-                  >
+                    } >
                     Add Employee
                   </button>
                 </div>

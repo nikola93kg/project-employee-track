@@ -49,7 +49,7 @@ function ProjectsList() {
   }, [projects, employees]);
 
   return (
-    <div className="projects-list">
+    <div className="projects-list-container">
       <div className="filter-panel">
         <Formik initialValues={{
             projectName: "",

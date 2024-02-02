@@ -14,7 +14,7 @@ function ProjectDetails() {
   if (!project) return <ProjectNotFound />
 
   return (
-    <div className='project-details'>
+    <div className='project-details-container'>
       <h2>{project.projectName}</h2>
       <p>Budget: {formatBudget(project.budget)}</p>
       <p>Start Date: {formatDate(project.startDate)}</p>

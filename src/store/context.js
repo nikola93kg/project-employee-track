@@ -29,7 +29,6 @@ const AppProvider = ({ children }) => {
     fetchEmployees();
   }, []);
 
-
   const createAndUpdateProject = (projectData, projectId) => {
     setProjects((prevProjects) => {
       let updatedProjects = [...prevProjects];

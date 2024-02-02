@@ -14,8 +14,7 @@
     }
 }
 
-
-.project-details {
+.project-details-container {
     height: 400px;
     width: 600px;
     display: grid;
@@ -23,7 +22,27 @@
     place-items: center;
     margin: 50px auto;
     background-color: rgba(255, 255, 255, 0.836);
+    transition: 0.4s all;
     h2 {
         color: #C5004B;
     }
+    &:hover {
+        box-shadow: rgba(252, 252, 252, 0.5) 0px 0px 20px 1px;
+        transform: scale(1.05);
+        cursor: pointer;
+        border-radius: 5px;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .project-not-found img {
+        height: 300px;
+        width: fit-content;
+    }
+    .project-details-container {
+        height: 300px;
+        width: 400px;
+        margin-top: 100px;
+    }
+    
 }
